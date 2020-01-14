@@ -1,0 +1,27 @@
+npm run deploy
+
+
+
+$ git add .
+$ git status // to see what changes are going to be commited
+$ git commit -m 'Some descriptive commit message'
+$ git push origin master
+
+$ git checkout gh-pages // go to the gh-pages branch
+$ git rebase master // bring gh-pages up to date with master
+$ git push origin gh-pages // commit the changes
+$ git checkout master // return to the master branch
+
+
+git push -f origin gh-pages
+
+
+##In master branch;
+npm run build
+##if not already obtained, grab the homepage route from the resulting text.
+##again, run
+npm run build
+##then...
+npm run deploy
+###
+### This will create (or update) the gh-pages branch and deploy.
