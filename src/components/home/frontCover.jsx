@@ -15,12 +15,12 @@ class FrontCover extends React.Component{
     if(this.props.cover){
     return(
       <React.Fragment>
-        <div className="randomSuggestion">
-      <p>Random Suggestion:</p>
-    </div>
-      <div className="image">
-      <div className="my_wrapper">
-        <img src={this.props.cover + ".jpg"} onClick={()=>this.props.onPress()}/>
+      <div className="randomSuggestion">
+        <p>Random Suggestion:</p>
+      </div>
+      <div className="imageDiv">
+        <div className="my_wrapper">
+          <img src={this.props.cover + ".jpg"} onClick={()=>this.props.onPress()}/>
         </div>
       </div>
     </React.Fragment>
