@@ -61,18 +61,6 @@
     text-align: center;
   }
 
-
-
-
-  .characterImage {
-    height: 400px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border: 4px solid white;
-    border-radius: 15px;
-  }
-
   .storyCoverImage {
     height: 480px;
     width: 300px;
@@ -290,4 +278,81 @@ justify-content: center;
 .editForm h6{
   margin-top: 16px;
   margin-bottom: 4px;
+}
+
+
+@media (min-width: 376px) and (max-width: 667px) {
+
+
+  .singleComicDetails{
+    float: left;
+    height: 80vh;
+    width:  30vw;
+    display: inline-block;
+    margin-top: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+    left: 1vw;
+    border: 5px solid white;
+    border-radius: 15px;
+    overflow: auto;
+  }
+
+  .singleComicDetails h5{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    font-size: 50%;
+  }
+
+  .singleComicDetails h6{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    font-size: 40%;
+  }
+
+  .singleComicUserOptions{
+    float: right;
+    height: 80vh;
+    width:  30vw;
+    display: inline-block;
+    margin-top: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+    right: 1vw;
+    border: 5px solid white;
+    border-radius: 15px;
+    overflow: auto;
+  }
+
+  .singleComicUserOptions h5{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    font-size: 50%;
+  }
+
+  .singleComicUserOptions h6{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    font-size: 40%;
+  }
+
+  .singleComicCoverImageDiv{
+    height: 80vh;
+    width:  30vw;
+    left: 34vw;
+    display: inline-block;
+    margin-top: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px solid white;
+    border-radius: 15px;
+    background-color: white;
+  }
+
+  .singleComicCoverImage{
+    max-height: 100%;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
 }

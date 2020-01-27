@@ -367,27 +367,13 @@ class New extends React.Component{
   render(){
     return(
       <React.Fragment>
-      <p>Create a new recommendation using the tools below!</p>
+      <h6>Create a new recommendation using the tools below!</h6>
       <div>
       <CharacterSelector
       characters={this.state.characters}
       onChange={this.handleCharacterSelector}/>
       </div>
       <div>
-      <SearchTypeSelectorView
-      character={this.state.character}
-      onChange={this.handleFilterSelect}
-      />
-      </div>
-      <div>
-      <div>
-      <FilteredSelectorView
-      filteredType={this.state.filter}
-      filteredOptions={this.state.filterOptionResults}
-      onChange={this.handleFilteredOptionSelector}
-      toggleFilterSelectorReady={this.toggleFilterSelectorReady}
-      />
-      </div>
       <CharacterView
       filter={this.state.filter}
       filterSelectorFetching={this.state.filterSelectorFetching}
@@ -397,6 +383,22 @@ class New extends React.Component{
       storiesComics={this.state.resultComicsStory}
       seriesComics={this.state.resultComicsSeries}/>
       </div>
+      <div>
+      <SearchTypeSelectorView
+      character={this.state.character}
+      onChange={this.handleFilterSelect}
+      />
+      </div>
+
+      <div>
+      <FilteredSelectorView
+      filteredType={this.state.filter}
+      filteredOptions={this.state.filterOptionResults}
+      onChange={this.handleFilteredOptionSelector}
+      toggleFilterSelectorReady={this.toggleFilterSelectorReady}
+      />
+      </div>
+
       </React.Fragment>
     )
   }

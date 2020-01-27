@@ -141,7 +141,7 @@ class CharacterSelector extends React.Component{
 
       <div className="characterSelector">
         <h6>Select a Character</h6>
-      <select onChange={this.props.onChange}>
+      <select className="select-css" onChange={this.props.onChange}>
       {this.sorted_options}
       </select>
 

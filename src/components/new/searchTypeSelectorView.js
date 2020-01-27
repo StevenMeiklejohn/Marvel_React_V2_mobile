@@ -21,7 +21,7 @@ class SearchTypeSelector extends React.Component{
     return(
       <div className="searchOptionSelector">
         <h6>Select a search filter</h6>
-      <select onChange={this.props.onChange}>
+      <select className="select-css" onChange={this.props.onChange}>
         <option> Options....</option>
         <option key="1" value="Stories">Stories</option>
         <option key="2" value="Events">Events</option>

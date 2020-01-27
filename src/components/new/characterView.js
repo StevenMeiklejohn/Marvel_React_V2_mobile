@@ -28,17 +28,17 @@ class CharacterView extends React.Component {
       // console.log(this.props.character);
       return(
         <div className="characterView">
-        <p>Character Details</p>
-        <p>Name: {this.props.character.name}</p>
+        <h6>Character Details</h6>
+        <h6>Name: {this.props.character.name}</h6>
         <div>
         <img className="characterImage" src={this.props.character.thumbnail.path + ".jpg"} alt="https://get.whotrades.com/u3/photo843E/20389222600-0/big.jpeg"/>
         </div>
         <div className="detailsBox">
-        <p>Description:</p>
-        <p className="detailsBox">{this.props.character.description}</p>
+        <h6>Description:</h6>
+        <h6 className="detailsBox">{this.props.character.description}</h6>
         </div>
         <div className="detailsBox">
-        <p>Links:</p>
+        <h6>Links:</h6>
         <a href={this.props.character.urls[0].url}>Detailed Description</a>
         <a href={this.props.character.urls[1].url}>Wiki</a>
         <a href={this.props.character.urls[2].url}>Marvel Comics</a>
