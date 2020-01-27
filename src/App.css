@@ -356,3 +356,78 @@ justify-content: center;
     margin: 0 auto;
   }
 }
+
+@media (min-width: 100px) and (max-width: 375px) {
+
+
+
+
+  .singleComicDetails{
+    display: inline-block;
+    min-height: 50vh;
+    max-height: 50vh;
+    min-width:  92vw;
+    max-width:  92vw;
+    border: 5px solid white;
+    border-radius: 15px;
+    overflow: auto;
+  }
+
+  .singleComicDetails h5{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    font-size: 50%;
+  }
+
+  .singleComicDetails h6{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    font-size: 40%;
+  }
+
+  .singleComicCoverImageDiv{
+    display: inline-block;
+    top: 65vh;
+    left: 1.6vh;
+    min-height: 50vh;
+    max-height: 50vh;
+    min-width:  92vw;
+    max-width:  92vw;
+    border: 5px solid white;
+    border-radius: 15px;
+    overflow: auto;
+  }
+
+  .singleComicCoverImage{
+    max-height: 100%;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .singleComicUserOptions{
+    display: inline-block;
+    top: 113vh;
+    left: 1.6vh;
+    max-height: 50vh;
+    max-width:  92vw;
+    margin-top: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px solid white;
+    border-radius: 15px;
+    overflow: auto;
+  }
+
+  .singleComicUserOptions h5{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    font-size: 50%;
+  }
+
+  .singleComicUserOptions h6{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    font-size: 40%;
+  }
+}

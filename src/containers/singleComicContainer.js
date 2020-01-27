@@ -54,11 +54,11 @@ class SingleComicContainer extends Component {
     return (
       <React.Fragment>
       <div>
-       <SingleComicView comic = {this.state.comic}/>
-      </div>
-      <div>
        <SingleComicDetails comic = {this.state.comic}/>
        </div>
+      <div>
+       <SingleComicView comic = {this.state.comic}/>
+      </div>
        <div>
         <SingleComicUserOptions comic = {this.state.comic} user = {this.props.user}/>
         </div>
