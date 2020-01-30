@@ -27,7 +27,7 @@ class Gallery extends React.Component {
   }
 
   handleButtonClick(event){
-    console.log(event.target.id);
+    // console.log(event.target.id);
     this.setState({id: event.target.id});
     // let request = new Request();
     // request.get('/comic/' + event.target.id);
@@ -39,7 +39,7 @@ class Gallery extends React.Component {
       return <Redirect to={url} />
     }
     if(this.props.detailsArray.length > 0){
-      console.log(this.props.detailsArray);
+      // console.log(this.props.detailsArray);
     return (
         <div className="thumbnails">
           {this.props.detailsArray.map(comic => this.renderImage(comic))}

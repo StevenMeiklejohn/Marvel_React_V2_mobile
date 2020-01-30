@@ -26,7 +26,7 @@ class RecommendationViewReceived extends React.Component{
   componentDidMount(){
     this.search_for_comic();
     this.getSender();
-    console.log("recommendedById", this.props.recommendation.recommendedById);
+    // console.log("recommendedById", this.props.recommendation.recommendedById);
   }
 
 
@@ -34,9 +34,9 @@ class RecommendationViewReceived extends React.Component{
   search_for_comic(){
     this.marvel.comics.find(this.props.recommendation.comicId)
     .then(function(res) {
-      console.log("single comic return data", res.data[0]);
+      // console.log("single comic return data", res.data[0]);
       this.setState({comic: res.data[0]});
-      console.log("Sent comic fetched", res.data[0]);
+      // console.log("Sent comic fetched", res.data[0]);
     }.bind(this))
     .fail(console.error)
     .done();
@@ -44,8 +44,8 @@ class RecommendationViewReceived extends React.Component{
 
   getSender(){
     const request = new Request();
-    const url = "http://localhost:8080/api/users/" + this.props.recommendation.recommendedById;
-    console.log("Get sender url", url);
+    const url = "http://134.209.17.105:8080/api/users/" + this.props.recommendation.recommendedById;
+    // console.log("Get sender url", url);
     request.get(url).then((data) => {
       this.setState({sender: data}, console.log("Got sender", this.state.sender))
     })
@@ -53,9 +53,9 @@ class RecommendationViewReceived extends React.Component{
 
   handleRemove(){
     const request = new Request();
-    const url = "http://localhost:8080/api/recommendations/" + this.props.recommendation.id;
+    const url = "http://134.209.17.105:8080/api/recommendations/" + this.props.recommendation.id;
     request.delete(url).then(()=> {
-      this.forceUpdate()})
+      this.props.reload()})
   }
 
 

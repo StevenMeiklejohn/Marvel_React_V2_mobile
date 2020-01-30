@@ -22,7 +22,7 @@ class CharacterSelector extends React.Component{
 
 
   render(){
-    console.log("Character Selector character props", this.props.characters);
+    // console.log("Character Selector character props", this.props.characters);
     // if(this.props.characters.length < 10){
     if(this.props.characters.length < 2){
       return(
@@ -32,7 +32,7 @@ class CharacterSelector extends React.Component{
       )
     }
     let characters = this.props.characters;
-    console.log("Character props", this.props.characters);
+    // console.log("Character props", this.props.characters);
 
 
 // #############################################
@@ -80,9 +80,9 @@ class CharacterSelector extends React.Component{
           flatChars.push(arrayElement);
         }
       }
-      console.log("Data acquisition complete", flatChars);
+      // console.log("Data acquisition complete", flatChars);
       var orderedChars = _.sortBy(flatChars, [function(o) { return o.name; }]);
-      console.log("Ordered Data", orderedChars);
+      // console.log("Ordered Data", orderedChars);
       var ordered_options = [];
         orderedChars.forEach(function(item){
           let itemForDb = {
@@ -95,7 +95,7 @@ class CharacterSelector extends React.Component{
           ordered_options.push(<option key={item.id} value={item.name}>{item.name}</option>)
         })
         this.sorted_options = ordered_options
-        console.log("sorted options", this.sorted_options);
+        // console.log("sorted options", this.sorted_options);
       }
       // ##############################################
       // ##############################################

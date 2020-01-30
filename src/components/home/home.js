@@ -46,7 +46,7 @@ class Home extends React.Component{
   };
 
   onPress(){
-    console.log("onPress triggered");
+    // console.log("onPress triggered");
     const id = this.state.id;
     this.setState({link: id});
   }

@@ -26,27 +26,27 @@ class TitleSelector extends React.Component{
       )
     }
     let titles = this.props.titles;
-    console.log("TITLE selector events props", titles);
+    // console.log("TITLE selector events props", titles);
     this.flattenEventsObject(titles);
-    console.log("TITLE selector events props post flatten", titles);
+    // console.log("TITLE selector events props post flatten", titles);
     let flatTitles = [];
     let orderedTitles = [];
     let ordered_options = [];
     if(titles){
       titles.forEach(function(element) {
         element.forEach(function(item){
-          console.log(item);
+          // console.log(item);
             flatTitles.push(item)
         })
       });
-      console.log(flatTitles);
+      // console.log(flatTitles);
       orderedTitles = _.sortBy(flatTitles, [function(o) { return o.title; }]);
 
       orderedTitles.forEach(function(item){
         ordered_options.push(<option key={item.id} value={item.title}>{item.title}</option>)
       })
       this.sorted_options = ordered_options
-      console.log("sorted options", this.sorted_options);
+      // console.log("sorted options", this.sorted_options);
     }
 
     return(

@@ -46,11 +46,11 @@ class LoginContainer extends React.Component{
   }
 
   handleUserPost(user){
-    console.log("handleUserPost called", user);
+    // console.log("handleUserPost called", user);
     const request = new Request();
-    request.post('http://localhost:8080/api/users', user).then(()=> {
-      window.location = '/users'
-      console.log("User post sent");
+    request.post('http://134.209.17.105:8080/api/users', user).then(()=> {
+      window.location = '/login'
+      // console.log("User post sent");
     })
   }
 
@@ -63,9 +63,9 @@ class LoginContainer extends React.Component{
   }
 
   retrieveUserForChecking(submittedDetails){
-    console.log("Retrieve user for checking args", submittedDetails);
+    // console.log("Retrieve user for checking args", submittedDetails);
     const request = new Request();
-    request.get('http://localhost:8080/api/users/findByUserName/' + submittedDetails.userName)
+    request.get('http://134.209.17.105:8080/api/users/findByUserName/' + submittedDetails.userName)
     .then((data) => {this.setState({detailsRetrieved: data})})
     .then((data)=> {this.props.setloggedInUserInfo(this.state.detailsRetrieved)})
     .then(()=>{this.setState({detailsSubmitted: submittedDetails})})

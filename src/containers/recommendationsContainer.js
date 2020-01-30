@@ -7,14 +7,25 @@ class RecommendationsContainer extends React.Component{
   constructor(props){
   super(props);
   this.state = {
-    recommendations: null
+    recommendations: null,
+    switch: false
   }
+  this.reload = this.reload.bind(this);
   }
 
   componentDidMount(){
-    console.log(this.props.user);
+    // console.log(this.props.user);
     const request = new Request();
-    request.get("http://localhost:8080/api/recommendations").then((data) => {
+    request.get("http://134.209.17.105:8080/api/recommendations").then((data) => {
+      this.setState({recommendations: data._embedded.recommendations})
+    })
+  }
+
+  reload(){
+    console.log("Reload function called");
+    // this.setState({switch: !this.state.switch});
+    const request = new Request();
+    request.get("http://134.209.17.105:8080/api/recommendations").then((data) => {
       this.setState({recommendations: data._embedded.recommendations})
     })
   }
@@ -34,7 +45,7 @@ class RecommendationsContainer extends React.Component{
 
     return(
       <div>
-        <RecommendedView recommendations={this.state.recommendations} user={this.props.user}/>
+        <RecommendedView reload={this.reload} recommendations={this.state.recommendations} user={this.props.user}/>
       </div>
     )
   }

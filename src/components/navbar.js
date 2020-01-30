@@ -28,7 +28,7 @@ class Navbar extends React.Component{
 
     if(this.props.user){
       return (
-        <ul>
+        <ul className="short-nav">
           <li>
             <Link style={{ textDecoration: 'none', color:'white' }} to="/">Home</Link>
           </li>

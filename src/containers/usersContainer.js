@@ -20,19 +20,19 @@ class UsersContainer extends React.Component{
   componentDidMount(){
 
     const request = new Request();
-    request.get("http://localhost:8080/api/users").then((data) => {
+    request.get("http://134.209.17.105:8080/api/users").then((data) => {
       this.setState({users: data._embedded.users})
     })
   }
 
   render(){
-    if(this.state.user == 0){
-      return null;
-    }
-    return(
-      <UserList users={this.state.users}/>
-    )
+  if(this.state.user == 0){
+    return null;
   }
+  return(
+    <UserList users={this.state.users}/>
+  )
+}
 
 }
 

@@ -21,7 +21,7 @@ class SingleComicDetails extends React.Component{
       </CreatorDetail>
       );
     });
-    console.log("SingleComicDetails comic prop", this.props.comic);
+    // console.log("SingleComicDetails comic prop", this.props.comic);
     return(
       <React.Fragment>
 

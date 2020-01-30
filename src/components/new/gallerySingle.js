@@ -16,7 +16,7 @@ class GallerySingle extends React.Component {
 
 
   handleButtonClick(event){
-    console.log(event.target.id);
+    // console.log(event.target.id);
     this.setState({id: event.target.id});
     // let request = new Request();
     // request.get('/comic/' + event.target.id);
@@ -28,7 +28,7 @@ class GallerySingle extends React.Component {
       return <Redirect to={url} />
     }
     if(this.props.details){
-      console.log(this.props.details);
+      // console.log(this.props.details);
     return (
         <div className="thumbnails">
         <div class="hovereffect">

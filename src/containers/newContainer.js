@@ -125,7 +125,7 @@ class New extends React.Component{
           resourceURI: character.resourceURI,
           thumbnail: character.thumbnail.path + "." + character.thumbnail.extension
         }
-        console.log("New Post Object", newPostObject);
+        // console.log("New Post Object", newPostObject);
         const request = new Request();
         postPromises.push(request.post('http://134.209.17.105:8080/api/marvelCharacters', newPostObject));
       }

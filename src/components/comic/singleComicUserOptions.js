@@ -20,14 +20,15 @@ class SingleComicUserOptions extends React.Component{
   componentDidMount(){
 
     const request = new Request();
-    request.get("http://localhost:8080/api/users").then((data) => {
+    request.get("http://134.209.17.105:8080/api/users").then((data) => {
       this.setState({users: data._embedded.users})
     })
+    // console.log("users in state", this.state.users)
   }
 
   handleUserSelect(event){
     var index = event.target.value;
-    console.log("HandleUserSelect Called", index);
+    // console.log("HandleUserSelect Called", index);
     this.setState({recipient: this.state.users[index]})
   }
 
@@ -38,9 +39,9 @@ class SingleComicUserOptions extends React.Component{
       comicId: this.props.comic.id,
       date: "today"
     }
-    console.log("handleSubmitRec called", recommendation);
+    // console.log("handleSubmitRec called", recommendation);
     const request = new Request();
-    request.post("http://localhost:8080/api/recommendations", recommendation).then(this.setState({reco_sent: true}));
+    request.post("http://134.209.17.105:8080/api/recommendations", recommendation).then(this.setState({reco_sent: true}));
 
   }
 

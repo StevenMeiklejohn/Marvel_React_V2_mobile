@@ -21,7 +21,7 @@ class SingleComicContainer extends Component {
   }
 
   componentDidMount(){
-    console.log("single comic container", this.props.id);
+    // console.log("single comic container", this.props.id);
     this.search_for_comic(this.props.id);
   }
 
@@ -39,7 +39,7 @@ class SingleComicContainer extends Component {
   search_for_comic(comicMarvelId){
     this.marvel.comics.find(comicMarvelId)
     .then(function(res) {
-      console.log("single comic return data", res.data[0]);
+      // console.log("single comic return data", res.data[0]);
       this.setState({comic: res.data[0]});
       // console.log(res.data[0]);
     }.bind(this))

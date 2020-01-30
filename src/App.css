@@ -118,7 +118,25 @@
     border: 10px solid white;
     border-radius: 15px;
     overflow: auto;
+  }
 
+  .recommendedDisplay{
+
+    top: 10vh;
+    max-width: 100vw;
+    max-width: 100vw;
+
+    max-height: 90vh;
+    min-height: 85vh;
+
+    border: 5px solid white;
+    border-radius: 25px;
+
+    overflow: auto;
+  }
+
+  .recommendedDisplay h1{
+    font-size: 70%;
   }
 
   .creatorDetail{
@@ -190,56 +208,54 @@ justify-content: center;
 }
 
 .recommendationView{
-  height: 140px;
+  display: block;
+  overflow: auto;
   border: 5px solid white;
   border-radius: 25px;
-  width: 50%;
-  margin-top: 10px;
+  max-width: 40%;
+  margin-top: 20px;
+  font-size: 60%;
 
 }
 
 
 .recommendationViewText{
+  height: 90%;
+  max-width: 30%;
   display: inline-block;
-  margin-top: 10px;
-  width: 60%;
-  text-align: left;
-  float: left;
-}
 
-.recommendationViewImage{
-  display: inline-block;
-  float: none;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-top: 17px;;
-  margin-bottom: auto;
-  border: 3px solid white;
-
-}
-
-.removeButtonDiv{
-  display: inline-block;
-  float: right;
-  margin-top: 35px;
-  margin-right: 15px;
-}
-
-.recommendationThumbnail{
-
-  display: block;
 
 
 }
 
 .recommendationView h6{
-
-  margin-top: 10px;
-  margin-bottom: 2px;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  font-size: 80%;
 }
 
-.singleUserDetails h6{
+.recommendationViewImage{
+  display: inline-block;
 
+margin-left: 5vw;
+margin-bottom: auto;
+  border: 3px solid white;
+}
+
+.removeButtonDiv{
+  display: inline-block;
+  float: right;
+  margin-top: 3vh;
+  margin-right: 1vw
+}
+
+.recommendationThumbnail{
+  display: block;
+}
+
+
+
+.singleUserDetails h6{
   margin-top: 10px;
   margin-bottom: 2px;
 }
@@ -286,10 +302,10 @@ justify-content: center;
 
   .singleComicDetails{
     float: left;
-    height: 80vh;
+    max-height: 60vh;
     width:  30vw;
     display: inline-block;
-    margin-top: 5vh;
+    margin-top: 20vh;
     margin-left: auto;
     margin-right: auto;
     left: 1vw;
@@ -301,21 +317,21 @@ justify-content: center;
   .singleComicDetails h5{
     margin-top: 5vh;
     margin-bottom: 5vh;
-    font-size: 50%;
+    font-size: 40%;
   }
 
   .singleComicDetails h6{
     margin-top: 5vh;
     margin-bottom: 5vh;
-    font-size: 40%;
+    font-size: 25%;
   }
 
   .singleComicUserOptions{
     float: right;
-    height: 80vh;
+    max-height: 60vh;
     width:  30vw;
     display: inline-block;
-    margin-top: 5vh;
+    margin-top: 20vh;
     margin-left: auto;
     margin-right: auto;
     right: 1vw;
@@ -327,21 +343,33 @@ justify-content: center;
   .singleComicUserOptions h5{
     margin-top: 5vh;
     margin-bottom: 5vh;
-    font-size: 50%;
+    font-size: 20%;
   }
 
   .singleComicUserOptions h6{
     margin-top: 5vh;
     margin-bottom: 5vh;
-    font-size: 40%;
+    font-size: 20%;
+  }
+
+  .singleComicUserOptions p{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    font-size: 50%;
+  }
+
+  .recipientButtonDiv{
+    margin: 0 auto;
+    margin-top: 5vh;
+    text-align:center;
   }
 
   .singleComicCoverImageDiv{
-    height: 80vh;
+    max-height: 60vh;
     width:  30vw;
     left: 34vw;
     display: inline-block;
-    margin-top: 5vh;
+    margin-top: 20vh;
     margin-left: auto;
     margin-right: auto;
     border: 5px solid white;
@@ -355,12 +383,82 @@ justify-content: center;
     display: block;
     margin: 0 auto;
   }
+
+  .recommendedDisplay{
+    top: 30vh;
+    max-width: 81vw;
+    max-height: 80vh;
+    border: 5px solid white;
+    border-radius: 25px;
+    padding-top: 15px;
+    padding-right: 100px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    overflow: auto;
+  }
+  .recommendedDisplay h1{
+    font-size: 60%;
+  }
+
+  .recommendationView{
+    display: inline-block;
+    max-height: 40vh;
+    max-width: 60vw;
+    border: 5px solid white;
+    border-radius: 25px;
+
+    margin-top: 10px;
+    overflow: auto;
+    font-size: 60%;
+
+  }
+
+  .recommendationView button{
+    display: inline-block;
+    float: right;
+  }
+
+
+  .recommendationViewText{
+    display: inline-block;
+    margin-top: 10px;
+    width: 60%;
+    text-align: left;
+    float: left;
+    font-size: 80%;
+
+  }
+
+  .recommendationViewImage{
+    display: inline-block;
+    float: none;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 17px;;
+    margin-bottom: auto;
+    border: 3px solid white;
+
+  }
+
+  .removeButtonDiv{
+    display: inline-block;
+    float: right;
+    margin-top: 35px;
+    margin-right: 15px;
+  }
+
+  .recommendationThumbnail{
+
+    display: block;
+  }
+
+  .recommendationView h6{
+    margin-top: 10px;
+    margin-bottom: 2px;
+  }
 }
 
 @media (min-width: 100px) and (max-width: 375px) {
-
-
-
 
   .singleComicDetails{
     display: inline-block;
@@ -368,6 +466,7 @@ justify-content: center;
     max-height: 50vh;
     min-width:  92vw;
     max-width:  92vw;
+    top: 25vh;
     border: 5px solid white;
     border-radius: 15px;
     overflow: auto;
@@ -387,7 +486,7 @@ justify-content: center;
 
   .singleComicCoverImageDiv{
     display: inline-block;
-    top: 65vh;
+    top: 78vh;
     left: 1.6vh;
     min-height: 50vh;
     max-height: 50vh;
@@ -400,16 +499,15 @@ justify-content: center;
 
   .singleComicCoverImage{
     max-height: 100%;
-    max-width: 100%;
-    display: block;
+
     margin: 0 auto;
   }
 
   .singleComicUserOptions{
     display: inline-block;
-    top: 113vh;
+    top: 126vh;
     left: 1.6vh;
-    max-height: 50vh;
+    max-height: 43vh;
     max-width:  92vw;
     margin-top: 5vh;
     margin-left: auto;
@@ -420,14 +518,78 @@ justify-content: center;
   }
 
   .singleComicUserOptions h5{
-    margin-top: 5vh;
-    margin-bottom: 5vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
     font-size: 50%;
   }
 
   .singleComicUserOptions h6{
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-    font-size: 40%;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    font-size: 60%;
+  }
+
+  .recipientButtonDiv{
+    margin: 0 auto;
+    margin-top: 2vh;
+    text-align:center;
+  }
+
+  .recommendationView{
+    display: inline-block;
+    max-height: 40vh;
+    min-width: 95vw;
+    max-width: 95vw;
+    border: 5px solid white;
+    border-radius: 25px;
+
+    margin-top: 10px;
+    overflow: auto;
+    font-size: 60%;
+
+  }
+
+  .recommendationView button{
+    display: inline-block;
+    float: right;
+  }
+
+
+  .recommendationViewText{
+    display: inline-block;
+    margin-top: 10px;
+    width: 60%;
+    text-align: left;
+    float: left;
+    font-size: 50%;
+
+  }
+
+  .recommendationViewImage{
+    display: inline-block;
+    float: none;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 17px;;
+    margin-bottom: auto;
+    border: 3px solid white;
+
+  }
+
+  .removeButtonDiv{
+    display: inline-block;
+    float: right;
+    margin-top: 35px;
+    margin-right: 15px;
+  }
+
+  .recommendationThumbnail{
+
+    display: block;
+  }
+
+  .recommendationView h6{
+    margin-top: 10px;
+    margin-bottom: 2px;
   }
 }

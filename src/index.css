@@ -49,6 +49,17 @@ a.active {
   color: #444;
 }
 
+.short-nav li{
+  font-family: 'Marvel', sans-serif;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  border-bottom: none;
+  height: 15%;
+  line-height:10vh;
+  font-size: 60%;
+  display: inline-block;
+}
+
 .resultsDisplay {
   display: inline-block;
   float: right;
@@ -126,19 +137,7 @@ a.active {
   line-height: 50%;
 }
 
-.recommendedDisplay{
-  position: absolute;
-  top: 100px;
-  width: 91%;
-  height: 80%;
-  border: 5px solid white;
-  border-radius: 25px;
-  padding-top: 15px;
-  padding-right: 100px;
-  padding-bottom: 15px;
-  padding-left: 15px;
-  overflow: auto;
-}
+
 
 .holding{
   display: inline-block;

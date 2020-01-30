@@ -28,7 +28,7 @@ class EditUserView extends React.Component{
       "userName": event.target.userName.value,
       "password": event.target.password.value
     }
-    console.log(user);
+    // console.log(user);
     this.props.handleUserUpdate(user);
   }
 

@@ -48,11 +48,11 @@ class CharacterView extends React.Component {
     }
 
     if(this.props.characterViewStatus == "story" && this.props.storiesComics.length > 0){
-      console.log("characterView props.storiesComics", this.props.storiesComics);
+      // console.log("characterView props.storiesComics", this.props.storiesComics);
       let details = this.props.storiesComics[0];
       let imageUrl = this.props.storiesComics[0].thumbnail.path + ".jpg";
-      console.log("CharacterView Story details", details);
-      console.log("CharacterView Story imageUrl", imageUrl);
+      // console.log("CharacterView Story details", details);
+      // console.log("CharacterView Story imageUrl", imageUrl);
       return(
         <div className="characterView">
         <GallerySingle imageUrl={imageUrl}
@@ -81,7 +81,7 @@ class CharacterView extends React.Component {
 
 
       if(this.props.characterViewStatus == "series" && this.props.seriesComics.length > 0){
-        console.log("CharacterView series comics", this.props.seriesComics);
+        // console.log("CharacterView series comics", this.props.seriesComics);
         let latestIndex = this.props.seriesComics.length - 1;
         // console.log(this.props.eventComics[latestIndex])
         let incomingThumbnails = this.props.seriesComics[latestIndex];

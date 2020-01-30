@@ -33,7 +33,7 @@ class MainContainer extends React.Component{
     if(localStorage.getItem('loggedInUserName') != null){
     var retrievedObject = localStorage.getItem('loggedInUser');
     var parsedObject = JSON.parse(retrievedObject);
-    console.log('parsedObject', parsedObject);
+    // console.log('parsedObject', parsedObject);
     this.setState({loggedInUserName: parsedObject.userName}, this.setState({loggedInUser: parsedObject}))
   this.setState({loggedInUser: parsedObject})
   }
@@ -51,7 +51,7 @@ class MainContainer extends React.Component{
   }
 
   setloggedInUserInfo(info){
-    console.log("setLogedInUserInfo function called", info);
+    // console.log("setLogedInUserInfo function called", info);
     localStorage.setItem('loggedInUser', JSON.stringify(info));
     this.setState({loggedInUser: info})
   }
@@ -62,6 +62,11 @@ class MainContainer extends React.Component{
     window.location = "/";
   }
 
+  renderUsers(){
+    if(this.state.loggedInUserName == "SteveMeiklejohn"){
+      return <Route path="/users" component={UsersContainer}/>
+    }
+  }
 
 
 
@@ -78,9 +83,8 @@ class MainContainer extends React.Component{
         />
       );
     }
-
     const MyAccountContainer = (props) => {
-      console.log("Main container loggedInUser state", this.state.loggedInUser);
+      // console.log("Main container loggedInUser state", this.state.loggedInUser);
       return(
         <Account
         userInfo={this.state.loggedInUser}
@@ -89,12 +93,6 @@ class MainContainer extends React.Component{
         />
       );
     }
-
-    // if(this.state.loggedInUser){
-    //   var loginStatus = "/logout"
-    // }else{
-    //   loginStatus = "/login"
-    // }
 
 
     return(
@@ -115,6 +113,8 @@ class MainContainer extends React.Component{
       <Route path="/new" component={New} />
 
 
+
+
       <Route exact path="/recommendations" render = {(props) => {
         const userProp = this.state.loggedInUser;
         return <Recommendations user={userProp} />
@@ -132,7 +132,10 @@ class MainContainer extends React.Component{
         return <EditUserContainer id={id} />
       }}
       />
-      <Route path="/users" component={UsersContainer}/>
+
+      <Route path="/users" render={props =>
+        (<UsersContainer {...props} loggedInUserName ={this.state.loggedInUserName}/>)
+      }/>
 
       <Route exact path="/comic/:id" render = {(props) =>{
         const userProp = this.state.loggedInUser;
