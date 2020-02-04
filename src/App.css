@@ -297,7 +297,7 @@ margin-bottom: auto;
 }
 
 
-@media (min-width: 376px) and (max-width: 667px) {
+@media (min-width: 376px) and (max-width: 812px) {
 
 
   .singleComicDetails{
@@ -455,6 +455,10 @@ margin-bottom: auto;
   .recommendationView h6{
     margin-top: 10px;
     margin-bottom: 2px;
+  }
+
+  .imageDiv img{
+    overflow-y: scroll;
   }
 }
 

@@ -12,7 +12,6 @@ import UsersContainer from './usersContainer'
 import LoginContainer from './loginContainer'
 import EditUserContainer from './editUserContainer'
 import Request from './../helpers/request.js'
-
 // const api = require('marvel-api');
 
 
@@ -22,8 +21,7 @@ class MainContainer extends React.Component{
     this.state = {
       loggedInUserName: null,
       loggedInUser: null,
-      loginFail: false,
-      users: null
+      loginFail: false
     }
     this.loginUser = this.loginUser.bind(this);
     this.setloggedInUserInfo = this.setloggedInUserInfo.bind(this);
@@ -39,28 +37,12 @@ class MainContainer extends React.Component{
     this.setState({loggedInUserName: parsedObject.userName}, this.setState({loggedInUser: parsedObject}))
   this.setState({loggedInUser: parsedObject})
   }
-  const request = new Request();
-request.get("http://134.209.17.105:8080/api/users").then((data) => {
-  this.setState({users: data._embedded.users})
-})
 }
 
 
-  //   if(localStorage.getItem('loggedInUserName') != null){
-  //   var retrievedObject = localStorage.getItem('loggedInUser');
-  //   var parsedObject = JSON.parse(retrievedObject);
-  //   // console.log('parsedObject', parsedObject);
-  //   this.setState({loggedInUserName: parsedObject.userName}, this.setState({loggedInUser: parsedObject}))
-  //   this.setState({loggedInUser: parsedObject})
-  // }
-
-
-
-
-
   loginUser(loggedInUser){
-    // console.log("Main container loginUser called");
-    // console.log("Logged in user being passed", loggedInUser);
+    console.log("Main container loginUser called");
+    console.log("Logged in user being passed", loggedInUser);
     this.setState({loggedInUserName: loggedInUser})
   }
 
@@ -69,7 +51,7 @@ request.get("http://134.209.17.105:8080/api/users").then((data) => {
   }
 
   setloggedInUserInfo(info){
-    console.log("setLoggedInUserInfo function called", info);
+    console.log("setLogedInUserInfo function called", info);
     localStorage.setItem('loggedInUser', JSON.stringify(info));
     this.setState({loggedInUser: info})
   }
@@ -82,10 +64,9 @@ request.get("http://134.209.17.105:8080/api/users").then((data) => {
 
   renderUsers(){
     if(this.state.loggedInUserName == "SteveMeiklejohn"){
-      return <Route path="/users" component={UsersContainer}/>
+      return <Route path="/users" component={UsersContainer} loggedInUserName ={this.state.loggedInUserName}/>
     }
   }
-
 
 
 
@@ -102,9 +83,8 @@ request.get("http://134.209.17.105:8080/api/users").then((data) => {
         />
       );
     }
-
     const MyAccountContainer = (props) => {
-      console.log("Main container loggedInUser state", this.state.loggedInUser);
+      // console.log("Main container loggedInUser state", this.state.loggedInUser);
       return(
         <Account
         userInfo={this.state.loggedInUser}
@@ -113,12 +93,6 @@ request.get("http://134.209.17.105:8080/api/users").then((data) => {
         />
       );
     }
-
-    // if(this.state.loggedInUser){
-    //   var loginStatus = "/logout"
-    // }else{
-    //   loginStatus = "/login"
-    // }
 
 
     return(
@@ -129,22 +103,16 @@ request.get("http://134.209.17.105:8080/api/users").then((data) => {
       </div>
       <Switch>
       <Route exact path="/" component={Home} />
-      <Route exact path="/logout" render={() => {
+      <Route path="/logout" render={() => {
                       this.logoutUser();
                       return <Home />;
                     }
                   }/>
-      <Route exact path="/login" render = {(props) => {
-        const users = this.state.users;
-        return <MyLoginContainer users={users} />
-      }}
-      />
-
-      <Route exact path="/account" render={MyAccountContainer} />
+      <Route path="/login" render={MyLoginContainer}/>
+      <Route path="/account" render={MyAccountContainer} />
+      <Route path="/new" component={New} />
 
 
-
-      <Route exact path="/new" component={New} />
 
 
       <Route exact path="/recommendations" render = {(props) => {
@@ -164,9 +132,8 @@ request.get("http://134.209.17.105:8080/api/users").then((data) => {
         return <EditUserContainer id={id} />
       }}
       />
-      <Route path="/users" render={props =>
-        (<UsersContainer {...props} loggedInUserName ={this.state.loggedInUserName}/>)
-      }/>
+
+      <Route path="/users" render={this.renderUsers}/>
 
       <Route exact path="/comic/:id" render = {(props) =>{
         const userProp = this.state.loggedInUser;
