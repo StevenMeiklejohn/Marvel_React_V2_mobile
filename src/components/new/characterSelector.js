@@ -12,12 +12,23 @@ class CharacterSelector extends React.Component{
   constructor(props){
   super(props);
   this.flattenCharactersObject = this.flattenCharactersObject.bind(this);
+  this.contains = this.contains.bind(this);
   this.sorted_options = [];
   }
 
   flattenCharactersObject(object){
       let flattened = _.flattenDeep(object);
   }
+
+  contains(a, obj) {
+    var i = a.length;
+    while (i--) {
+       if (a[i] === obj) {
+           return true;
+       }
+    }
+    return false;
+}
 
 
 
@@ -72,26 +83,31 @@ class CharacterSelector extends React.Component{
     // ########################################
     let flatChars = [];
     if(characters.length === 2){
-      for(var element of characters){
-        var topElementArray = element._embedded.marvelCharacters;
-        // console.log("topArrayElement", topElementArray);
-        for(var arrayElement of topElementArray){
-          // console.log("arrayElement", arrayElement);
-          flatChars.push(arrayElement);
-        }
+      var characters1 = characters[0]._embedded.marvelCharacters
+      for (var i = 0; i < characters1.length; i++) {
+        var obj = characters1[i]
+        flatChars.push(obj)
+    }
+    var characters2 = characters[1]._embedded.marvelCharacters
+    for (var i = 0; i < characters2.length; i++) {
+      var obj = characters2[i]
+      if(this.contains(characters2, obj)){
+        continue
+      } else {
+        flatChars.push(obj)
       }
-      // console.log("Data acquisition complete", flatChars);
-      var orderedChars = _.sortBy(flatChars, [function(o) { return o.name; }]);
-      // console.log("Ordered Data", orderedChars);
+  }
+
+  console.log("Data acquisition complete", flatChars);
+  flatChars.sort(function(a, b) {
+    var textA = a.name.toUpperCase();
+    var textB = b.name.toUpperCase();
+    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+  });
+  var orderedChars = flatChars;
+
       var ordered_options = [];
         orderedChars.forEach(function(item){
-          let itemForDb = {
-            "marvelId": item.id,
-            "name": item.name,
-            "description": item.description,
-            "modified": item.modified,
-            "resourceURI": item.resourceURI
-          }
           ordered_options.push(<option key={item.id} value={item.name}>{item.name}</option>)
         })
         this.sorted_options = ordered_options
